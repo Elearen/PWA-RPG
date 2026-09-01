@@ -1,0 +1,1300 @@
+WORLD & EXPLORATION SYSTEM SPECIFICATION
+Document: WORLD_AND_EXPLORATION_SPEC Version: 0.4 Status: Active Design Purpose: Defines the physical game world, regions, settlements, character travel paths, exploration, travel, safe areas, dangerous areas, Points of Interest, discovery and the relationship between exploration and the narrative.
+ 
+⸻
+ 
+1. DESIGN GOALS
+The world should feel like a coherent place rather than a collection of disconnected RPG maps.
+Each protagonist follows a linear main story along a fixed travel path through the world.
+The player should gradually develop a mental map of the world through:
+travel
+exploration
+journal discoveries
+NPC information
+landmarks
+Points of Interest
+journeys
+dungeons
+story events
+The world should reward curiosity without requiring the player to manually control movement through every individual metre of terrain.
+The main story should provide a clear forward direction while allowing the player to revisit prior locations and complete optional content.
+Locations remain timeless once authored and available. Story developments do not transform previously visited locations. Instead, later story developments are represented through new locations, routes, POIs and destinations that become available along the player’s path.
+This allows the player to progress at their own pace without requiring previously visited locations to change state.
+A world map and regional maps are provided as imaginative starting points for understanding the setting, geography and relationships between locations. They are reference materials rather than interactive gameplay systems.
+ 
+⸻
+ 
+2. WORLD STRUCTURE
+The world is organised hierarchically:
+WORLD
+ ├── Regions
+ │    ├── Settlements
+ │    ├── Wilderness
+ │    ├── Routes
+ │    ├── Points of Interest
+ │    └── Dungeons
+ │
+ ├── Character Travel Paths
+ │    ├── Forest Protagonist Path
+ │    ├── Coastal Protagonist Path
+ │    └── Mountain Protagonist Path
+ │
+ └── Global Story Developments
+Regions form the primary geographic divisions.
+Settlements provide safe civilisation.
+Wilderness provides dangerous exploration.
+Routes connect locations.
+Character travel paths define the linear sequence of locations used by each protagonist’s main story.
+POIs provide optional and narrative-rich discoveries along or near those paths.
+Dungeons provide specialised high-risk content.
+Global story developments determine which new locations, routes and destinations become available along the player’s path. They do not alter the state of previously authored locations.
+The provided world map and regional maps establish the imaginative geography of the world but are not interactive map interfaces.
+ 
+⸻
+ 
+3. THE ESTABLISHED WORLD
+The world contains a broad range of environments and societies.
+Established major environments include:
+temperate kingdom regions
+ancient forests
+high mountains
+dwarven territories and cities
+deserts
+oases
+coastal regions
+marshes and swamps
+ancient ruins
+haunted battlefields
+monster-infested wilderness
+These are part of the same connected world.
+The geography shown in the provided world and regional maps should guide the placement and relationships of these environments.
+ 
+⸻
+ 
+4. ELEVEN SIGNIFICANT SETTLEMENTS
+The world contains:
+Eleven significant settlements.
+They are not interchangeable hubs.
+Each settlement has its own:
+geography
+economy
+population
+local problems
+nearby wilderness
+political relationships
+available services
+story relevance
+The settlements should form an interconnected economic and geographic network.
+Not every settlement must be part of every protagonist’s main travel path.
+Some settlements may be:
+main-path locations
+shared locations
+optional destinations
+regional hubs
+locations reached through side content
+Settlements remain timeless once authored and available. Later story developments should lead the player to new locations or destinations rather than changing the identity or state of an existing settlement.
+ 
+⸻
+ 
+5. THREE STARTING SETTLEMENTS
+Three settlements serve as the starting points for the three protagonist storylines.
+Forest Starting Settlement
+A small farming settlement situated within or near an ancient forest.
+The protagonist begins as a young person from this community.
+They eventually join the King’s Army.
+ 
+⸻
+ 
+Coastal Starting Settlement
+A coastal trading town.
+The protagonist begins as an orphan/street rat.
+After saving a merchant from bandits, they enter the merchant’s household.
+ 
+⸻
+ 
+Mountain Starting Settlement
+A human settlement in the mountains.
+The protagonist is a blacksmith apprentice.
+They regularly travel to a nearby dwarven city to deliver tools and return with ore.
+ 
+⸻
+ 
+6. THREE STARTING AREAS
+The starting areas provide deliberately different introductions to the same world.
+Forest
+Introduces:
+farming
+forests
+wilderness
+monsters
+the kingdom
+military life
+Coast
+Introduces:
+trade
+merchants
+crime
+bandits
+maritime activity
+piracy/smuggling
+Mountains
+Introduces:
+blacksmithing
+mining
+dwarves
+mountain travel
+ore trade
+deep-mountain threats
+ 
+⸻
+ 
+7. SHARED WORLD
+The three starting areas are not separate campaigns.
+They are geographically and narratively connected.
+Events occurring in one region can affect the others.
+For example:
+Mountain monster activity
+        ↓
+Dwarven mining disrupted
+        ↓
+Ore shipments decrease
+        ↓
+Trade becomes more expensive
+        ↓
+Coastal merchants change routes
+        ↓
+Piracy/smuggling increases
+        ↓
+Kingdom experiences shortages
+The player may encounter only parts of this chain initially.
+The three protagonists may travel along different fixed paths while still passing through a shared world affected by common story developments.
+Story developments should be expressed through new locations, routes, POIs and destinations becoming available along the player’s path.
+The provided world map and regional maps may illustrate these relationships, but the player does not interact with them as navigable map systems.
+ 
+⸻
+ 
+8. REGION AND PATH UNLOCKING
+The world should expand progressively.
+The player initially has access to a limited section of the protagonist’s assigned travel path.
+Story progression unlocks the next main-story locations along that path.
+Unlock conditions may include:
+story progression
+completing a main-story objective
+defeating a boss
+meeting a requirement
+establishing access to a route
+resolving a regional event
+The main story does not allow unrestricted travel to arbitrary distant regions.
+A location becomes available when it is reached by the protagonist’s fixed path or unlocked through an explicitly authored side-content connection.
+Story developments should unlock new locations rather than modify previously visited locations.
+ 
+⸻
+ 
+9. LINEAR MAIN STORY PATHS
+Each protagonist has a fixed main-story travel path through the world.
+Conceptually:
+Starting Settlement
+        ↓
+Main-Path Location 1
+        ↓
+Main-Path Location 2
+        ↓
+Main-Path Location 3
+        ↓
+Major Story Destination
+        ↓
+Final Story Region
+The exact locations and sequence are content decisions.
+The path determines:
+the order of main-story locations
+the order of major story events
+the intended progression of regional difficulty
+the protagonist’s geographic movement
+the locations available for main-story advancement
+The path is linear for main-story purposes.
+Later story developments are represented by new locations appearing farther along the path. Previously visited locations remain unchanged.
+ 
+⸻
+ 
+10. FORWARD AND BACKWARD TRAVEL
+The player can travel along the protagonist’s established path in either direction.
+Once a location has been reached, the player may return to prior locations.
+Travel is therefore:
+Forward along the path
+        or
+Backward along the path
+The player cannot freely jump between unrelated locations outside the protagonist’s path unless a specific story or side-content connection allows it.
+Returning to prior locations can be useful for:
+services
+quests
+selling equipment
+managing inventory
+completing optional content
+revisiting discovered POIs
+repeatable journeys
+reviewing information before continuing
+Because locations are timeless, returning to them does not require the location to enter a new world state.
+New story developments may instead make additional locations available farther along the path or reveal new POIs connected to the player’s current progression.
+ 
+⸻
+ 
+11. FREE EXPLORATION
+The player has freedom within the protagonist’s current section of the world path.
+This freedom includes:
+choosing whether to investigate available POIs
+choosing whether to enter available dungeons
+choosing whether to complete side content
+choosing whether to return to prior locations
+choosing whether to travel forward or backward along the established path
+choosing when to continue to newly available locations
+The player does not freely select any destination in the entire world.
+The main narrative remains linear, while exploration and optional content provide flexibility around that linear structure.
+The player may postpone newly available optional content and continue at their own pace.
+ 
+⸻
+ 
+12. EXPLORATION MODEL
+The game is not intended to simulate continuous physical walking.
+Instead, exploration is represented through:
+locations
+fixed character paths
+routes
+journeys
+encounters
+POIs
+events
+discoveries
+The player chooses an intended destination, path direction or activity.
+The game resolves the associated travel and exploration gameplay.
+The provided maps establish the imaginative geography and spatial relationships of the world. They do not function as interactive navigation screens.
+ 
+⸻
+ 
+13. LOCATIONS
+A location is a meaningful geographic destination.
+Examples include:
+settlements
+camps
+ruins
+mines
+fortifications
+landmarks
+dungeons
+wilderness destinations
+other authored locations
+Locations can contain multiple gameplay functions.
+A location may be:
+part of a protagonist’s main path
+shared by multiple protagonists
+optional
+accessible through a POI
+accessible through a dungeon
+unlocked as a new destination along the path
+Locations are timeless. Once available, a location retains its authored identity and does not transition through narrative world states.
+ 
+⸻
+ 
+14. SAFE AREAS
+Safe areas are locations where the player is protected from ordinary wilderness threats.
+Examples include:
+settlements
+established camps
+other explicitly designated safe locations
+Safe areas provide a place for the player to:
+manage equipment
+manage inventory
+use consumables
+interact with services
+interact with NPCs
+review story information
+prepare for journeys
+Safe areas may occur at both main-path locations and optional locations.
+ 
+⸻
+ 
+15. CONSUMABLE RESTRICTION
+Consumables can only be used in safe areas.
+This is an established gameplay rule.
+Therefore:
+Consumables cannot be activated during ordinary wilderness travel or combat.
+This makes preparation before entering dangerous areas meaningful.
+It also prevents consumables from becoming constant combat-management tools.
+ 
+⸻
+ 
+16. UNSAFE AREAS
+Unsafe areas contain potential combat threats.
+Entering or travelling through an unsafe area can result in:
+enemy encounters
+environmental events
+story events
+discovery events
+POIs
+Travel through unsafe areas is therefore a meaningful gameplay activity rather than simple menu navigation.
+Unsafe areas may be located:
+between main-path locations
+around settlements
+near POIs
+inside dungeons
+along optional side-content branches
+ 
+⸻
+ 
+17. COMBAT DURING TRAVEL
+Unsafe-area travel requires combat where an encounter occurs.
+The player does not manually move around enemies to avoid combat.
+Instead, the Journey system resolves encounters as part of travel.
+This integrates:
+Exploration
++
+Journey
++
+Combat
++
+Loot
++
+Progression
+ 
+⸻
+ 
+18. JOURNEY ROUTES
+Routes connect locations along a protagonist’s travel path.
+A route can have:
+direction
+distance
+danger rating
+enemy tables
+environmental events
+POIs
+story events
+requirements
+rewards
+Routes may support:
+forward travel
+backward travel
+one-way travel
+story-gated access
+The main-story route sequence remains fixed even when the player can travel backward along it.
+Story developments may unlock new route segments farther along the path. Existing route segments remain unchanged unless their authored rules explicitly define otherwise.
+ 
+⸻
+ 
+19. ROUTE SAFETY
+A route can be:
+safe
+relatively safe
+dangerous
+extremely dangerous
+Route safety is authored as part of the route and does not need to change over time.
+A later story development should generally introduce a new route or destination rather than transform an existing route.
+Route danger may differ by direction or by the authored route definition.
+ 
+⸻
+ 
+20. STORY DEVELOPMENTS AFFECT EXPLORATION
+Major narrative developments expand the player’s available path.
+They may introduce:
+new locations
+new route segments
+new POIs
+new dungeons
+new story destinations
+new optional branches
+new journal information
+new NPC information
+They do not transform previously visited locations into new states.
+For example:
+Mountain Story Development
+        ↓
+New Mountain Route Opens
+        ↓
+New Mining Settlement Becomes Available
+        ↓
+New Dwarven Dungeon Is Discovered
+        ↓
+New Trade Route Continues Toward the Kingdom
+The world therefore responds to story progression through expansion along the player’s path rather than through changing the state of existing locations.
+The provided maps may visually suggest these relationships, but the game presents them through authored destinations, travel choices and narrative information rather than an interactive map.
+ 
+⸻
+ 
+21. POINTS OF INTEREST
+Points of Interest are optional or semi-optional exploration destinations.
+POIs are primarily placed along, near or adjacent to a protagonist’s fixed travel path.
+A POI may represent:
+ruins
+abandoned buildings
+landmarks
+graves
+battlefields
+unusual natural features
+camps
+caves
+hidden paths
+historical sites
+mysterious objects
+POIs provide side content without changing the linear order of the main story.
+ 
+⸻
+ 
+22. POI RELATIONSHIP TO MAIN PATHS
+A POI is associated with one or more points along a protagonist’s travel path.
+Conceptually:
+Main Path Location A
+        ↓
+Route Segment
+        ├── POI 1
+        ├── POI 2
+        └── Optional Dungeon
+        ↓
+Main Path Location B
+The player may investigate the POI before continuing forward or return to it later.
+POIs do not normally create unrestricted access to unrelated regions.
+A later story development may reveal additional POIs along a newly available section of the path.
+Previously discovered POIs remain available and unchanged.
+ 
+⸻
+ 
+23. POI DISCOVERY
+POIs can be discovered through:
+exploration along the current path
+NPC information
+quests
+journal entries
+previous discoveries
+route travel
+story progression
+Not every POI needs to be explicitly marked on a map.
+The provided maps are imaginative reference materials and do not need to display the player’s discovery state.
+A POI may be:
+visible from a route
+revealed by an NPC
+discovered through a side quest
+unlocked by a journal clue
+revealed when a new path segment becomes available
+POI discovery does not require the player to complete the POI immediately.
+ 
+⸻
+ 
+24. POI CONTENT
+A POI may provide:
+a journal story bite
+an item
+an encounter
+an NPC
+a quest
+lore
+a combat encounter
+a hidden path
+a Story Relic
+evidence about a larger world event
+POIs are therefore a major side-content and narrative delivery mechanism.
+POI content should enrich the main path without replacing the main story’s fixed progression.
+POI content remains authored and timeless once discovered.
+ 
+⸻
+ 
+25. DISCOVERY STATE
+Locations and POIs have discovery state.
+Conceptually:
+UNKNOWN
+   ↓
+DISCOVERED
+   ↓
+VISITED
+   ↓
+COMPLETED
+Not every location needs all states.
+For example, a settlement may remain simply discovered/visited, while a dungeon can have a completion state.
+A POI may be discovered before the player chooses to visit it.
+Discovery state records the player’s relationship with the location. It does not represent a changing world state.
+ 
+⸻
+ 
+26. DISCOVERY DOES NOT REQUIRE COMPLETION
+Finding a location does not necessarily mean the player has completed its content.
+For example:
+Discover Dungeon
+      ↓
+Dungeon Available
+      ↓
+Later Journey
+      ↓
+Dungeon Completed
+This distinction allows exploration and progression to occur at different times.
+The player may continue along the main path and return later to complete optional content.
+ 
+⸻
+ 
+27. MAPS AS IMAGINATIVE REFERENCE MATERIAL
+A world map and regional maps are provided as imaginative starting points for the setting.
+They communicate:
+broad geography
+regional relationships
+environmental placement
+settlement context
+approximate travel relationships
+the overall shape and character of the world
+They are not interactive gameplay systems.
+The player does not use an interactive world map or regional map to:
+select destinations
+navigate between locations
+inspect discovery state
+reveal fog of war
+choose arbitrary routes
+track current position
+access map-based travel controls
+Travel is instead presented through authored location choices, path progression, journey interfaces, narrative descriptions and available destinations.
+The maps may be included in design documentation, onboarding material or other non-interactive presentation contexts, but they do not define a required in-game map interface.
+ 
+⸻
+ 
+28. TRAVEL PRESENTATION WITHOUT AN INTERACTIVE MAP
+The game should communicate travel through:
+current location
+available forward destination
+available backward destination
+route descriptions
+journey descriptions
+regional context
+landmarks
+NPC directions
+journal information
+narrative transitions
+location and destination lists
+A travel interface may present the player with authored choices such as:
+Current Location
+    ├── Continue Forward → Next Main-Path Location
+    ├── Return Backward → Prior Visited Location
+    └── Investigate → Available POI or Dungeon
+This interface is a travel and destination-selection system, not an interactive map.
+The player should understand where they are going through names, descriptions, narrative context and available choices rather than through direct map manipulation.
+ 
+⸻
+ 
+29. LOCATION INFORMATION
+Locations and destinations may communicate:
+location name
+location type
+safe/unsafe status
+discovered status
+current path position
+forward/backward travel availability
+available journey
+recommended level
+known route
+dungeon status
+relevant story marker
+optional-content marker
+newly unlocked destination marker
+This information should be presented through location, journey, journal and travel interfaces rather than through an interactive map.
+ 
+⸻
+ 
+30. LOCATION SERVICES
+Settlements can provide services.
+Possible services include:
+merchants
+equipment management
+inventory management
+quest/story interactions
+crafting
+blacksmithing
+guild services
+other progression systems
+Services are determined by settlement identity.
+Not every settlement should contain every service.
+Services are stable properties of the settlement unless a specific authored rule defines otherwise.
+Story developments should generally introduce new settlements or new destinations with different services rather than changing the services of an existing settlement.
+ 
+⸻
+ 
+31. SETTLEMENT SPECIALISATION
+Settlements should have meaningful differences.
+For example:
+Coastal Trading Town
+    → Merchant / trade emphasis
+
+Mountain Human Settlement
+    → Blacksmith / mining relationship
+
+Dwarven City
+    → Metalwork / mining / specialised equipment
+
+Military Settlement
+    → Army / combat / supplies
+These are examples of the intended design direction, not a requirement that every listed service be implemented exactly this way.
+ 
+⸻
+ 
+32. DWARVEN CITIES
+Dwarven settlements are integrated into the world economy.
+The mountain protagonist has an established relationship with a nearby dwarven city through:
+delivering tools
+returning with ore
+This provides a natural early-game connection between:
+blacksmithing
+mining
+dwarven society
+trade
+mountain travel
+The dwarven city may be a main-path location for the mountain protagonist and an optional or shared location for other protagonists if their paths later connect to it.
+Later mountain story developments should lead to new locations, mines, routes or dungeons connected to the dwarven city rather than changing the city’s state.
+ 
+⸻
+ 
+33. MOUNTAIN THREAT
+The deep mountains are becoming increasingly dangerous.
+Monsters emerging from deep mountain regions affect:
+mining
+dwarven cities
+mountain settlements
+travel routes
+trade
+This threat should be visible through both gameplay and narrative discoveries.
+It should be represented through new dangerous locations, routes, dungeons and encounters along the mountain protagonist’s path.
+The mountain protagonist’s fixed path may progress into these new locations without requiring previously visited mountain settlements to change state.
+ 
+⸻
+ 
+34. DESERT REGIONS
+Desert regions contain:
+settlements
+oases
+tribal populations
+dangerous wilderness
+trade routes
+The desert tribes have unusually united and are conducting raids against distant settlements.
+This creates a geopolitical threat that can affect exploration and travel outside the desert itself.
+A desert region may appear on a protagonist’s path only when the main story reaches it or when an authored side-content connection makes it available.
+New desert locations and routes should communicate the progression of this threat without requiring existing settlements to change state.
+ 
+⸻
+ 
+35. COASTAL REGIONS
+Coastal areas contain:
+trading settlements
+maritime routes
+merchants
+pirates
+smugglers
+coastal wilderness
+The coastal economy is particularly sensitive to disruption elsewhere in the world.
+The coastal protagonist’s fixed path should use these regions to develop the themes of trade, crime, piracy and smuggling.
+Later coastal story developments should introduce new ports, routes, ships, hideouts and coastal destinations rather than changing previously visited coastal settlements.
+ 
+⸻
+ 
+36. FOREST REGIONS
+Ancient forest regions contain:
+farming communities
+wilderness
+monsters
+ruins
+hidden locations
+routes
+story discoveries
+The forest is one of the player’s earliest examples of the distinction between civilisation and dangerous wilderness.
+The forest protagonist’s fixed path should begin in this environment before progressing toward the wider kingdom and military storyline.
+New forest locations and POIs may become available as the protagonist advances, while previously visited forest locations remain timeless.
+ 
+⸻
+ 
+37. MARSHES AND SWAMPS
+Marsh and swamp regions provide a distinct exploration environment.
+They can contain:
+isolated settlements
+dangerous creatures
+ruins
+hidden locations
+unusual routes
+story discoveries
+They should feel materially different from forests and mountains.
+A marsh or swamp may serve as a main-path region, an optional side-content region or a shared region depending on the authored travel paths.
+New marsh and swamp destinations should be added along the player’s path as appropriate rather than represented through changing states of existing locations.
+ 
+⸻
+ 
+38. ANCIENT RUINS
+Ancient ruins are remnants of the lost human civilisation.
+Most are extremely worn.
+They may contain:
+fragments of ancient mechanisms
+inscriptions
+artefacts
+journal discoveries
+monsters
+clues to the ancient civilisation
+evidence relating to the portal event
+Ancient ruins are generally accessed as POIs, dungeons or authored locations along a protagonist’s path.
+Each ruin is a timeless authored location. Additional discoveries should lead to other ruins or connected locations rather than changing the ruin itself.
+ 
+⸻
+ 
+39. HAUNTED BATTLEFIELDS
+Haunted battlefields are locations where historical conflict has left supernatural remnants.
+They can provide:
+historical story bites
+undead encounters
+lost equipment
+ghosts
+clues about previous wars
+connections to the wider history of the world
+They are typically optional side-content locations discovered along or near a protagonist’s path.
+Each battlefield remains a stable authored location once discovered.
+ 
+⸻
+ 
+40. WORLD HISTORY AS EXPLORATION
+The player learns history through physical locations.
+The world should answer questions such as:
+“What happened here?”
+rather than simply telling the player through an exposition screen.
+Ruins, battlefields, settlements and artefacts are therefore narrative objects.
+Because these locations are often optional, the player can discover the world’s history at their own pace while still following the main story’s fixed path.
+Later historical revelations should be delivered through new locations, POIs, journal entries and destinations rather than by changing the meaning or state of previously visited locations.
+ 
+⸻
+ 
+41. EXPLORATION AND THE JOURNAL
+Exploration directly feeds the Journal.
+A discovery may trigger:
+LOCATION DISCOVERED
+        ↓
+Story Bite Unlocked
+        ↓
+Journal Updated
+        ↓
+Related Story Information Available
+The player can therefore reconstruct the world through exploration.
+Journal discoveries may also:
+reveal additional POIs
+clarify the significance of a location
+provide context for a main-story event
+unlock optional quests
+connect discoveries across different protagonist paths
+point toward newly available locations
+ 
+⸻
+ 
+42. EXPLORATION AND QUESTS
+Quests may direct the player toward a broad objective.
+The game should favour:
+“Investigate what is happening in the mountains.”
+over:
+“Travel exactly 3.2 km north and click the highlighted object.”
+The player should retain a sense of discovery.
+However, the main story should still communicate the next intended destination along the protagonist’s fixed path.
+Side quests may direct the player to POIs near the current path or to previously visited locations.
+Story developments should direct the player toward new locations rather than requiring existing locations to change state.
+ 
+⸻
+ 
+43. EXPLORATION AND NPC INFORMATION
+NPCs can provide:
+rumours
+directions
+warnings
+historical information
+references to locations
+information about current events
+NPC information can reveal locations or make existing discoveries more meaningful.
+NPCs should generally point the player toward content connected to the protagonist’s current or previously visited path.
+NPCs may also provide information about newly available destinations farther along the path.
+ 
+⸻
+ 
+44. DISCOVERY CHAINS
+A single discovery can lead to another.
+For example:
+NPC Rumour
+    ↓
+Unknown POI
+    ↓
+Ruined Battlefield
+    ↓
+Journal Story Bite
+    ↓
+Historical Clue
+    ↓
+New POI Along the Path
+    ↓
+Ancient Ruin
+This creates exploration-driven narrative progression without requiring unrestricted world travel.
+Discovery chains should lead to new authored locations, POIs or route segments rather than changing the state of existing locations.
+ 
+⸻
+ 
+45. TRAVEL RISK
+Travel through dangerous areas exposes the player to risk.
+Risk can include:
+combat
+HP/resource expenditure
+equipment loss under the established defeat rules
+gold loss
+time
+opportunity cost
+The player therefore has meaningful decisions about:
+whether to investigate a POI now
+whether to continue forward
+whether to return backward
+whether to enter a dungeon
+whether to postpone optional content
+whether to proceed to a newly unlocked location
+The player does not normally choose between unrelated geographic routes outside the protagonist’s fixed path.
+ 
+⸻
+ 
+46. FORWARD TRAVEL VS RETURN TRAVEL
+Forward travel advances the protagonist’s main-story position.
+Return travel moves the protagonist toward previously visited locations.
+Conceptually:
+Current Location
+    ├── Forward → Next Main-Path Location
+    └── Backward → Prior Visited Location
+Forward travel may unlock:
+new story chapters
+new regions
+new settlements
+new POIs
+new dungeons
+new story destinations
+Backward travel may enable:
+unfinished side content
+newly revealed POIs
+services
+repeatable journeys
+story follow-up information
+revisiting previously discovered locations
+Backward travel does not cause prior locations to change state.
+ 
+⸻
+ 
+47. SAFE ROUTES VS DANGEROUS ROUTES
+Where geography permits, multiple route conditions can exist along the fixed path.
+For example:
+Forward Route
+Dangerous
+Main-story progression
+New content
+
+Backward Route
+Previously travelled
+Known route
+Return access
+A route’s safety is authored as part of the route.
+Rather than changing an existing route from safe to dangerous, a later story development should generally introduce a new route segment, branch or destination with its own danger level.
+Exact route configurations are content decisions.
+The system supports linear path progression with reversible travel.
+ 
+⸻
+ 
+48. EXPLORATION REWARDS
+Exploration can reward:
+XP
+gold
+equipment
+consumables
+Story Relics
+journal discoveries
+quests
+new POIs
+new dungeons
+narrative information
+access to new locations
+Exploration should not be reduced to a loot dispenser.
+Information itself is a reward.
+Optional content should provide meaningful rewards without making completion mandatory for main-story progression unless explicitly designed as a required story gate.
+ 
+⸻
+ 
+49. RETURN TRAVEL
+Previously discovered locations remain known.
+The player can return to them by travelling backward along the protagonist’s established path.
+Returning can be useful for:
+services
+quests
+selling equipment
+managing inventory
+completing optional content
+repeatable journeys
+reviewing journal information
+following up on discoveries
+The player cannot normally return to locations that have never been reached or discovered through the protagonist’s path.
+Returning to a location does not trigger a world-state transition. The location remains as authored.
+ 
+⸻
+ 
+50. TIMELESS LOCATIONS AND STORY PROGRESSION
+Locations remain timeless so that the player can progress at their own pace.
+A location’s identity, services, geography and authored content do not change because the player advances the main story.
+Story developments are represented through:
+new locations
+new route segments
+new POIs
+new dungeons
+new story destinations
+new journal entries
+new NPC information
+new optional branches
+Conceptually:
+Existing Location
+        ↓
+Player Progresses
+        ↓
+New Path Segment Available
+        ↓
+New Location Discovered
+        ↓
+New Story Development Encountered
+This structure prevents the player from missing content because they did not visit a location at the intended narrative moment.
+It also allows the player to complete optional content before or after advancing the main story.
+ 
+⸻
+ 
+51. NO FULL WORLD RESET
+World discoveries and major story progress are persistent.
+Ordinary defeat does not:
+undiscover locations
+reset routes
+reset POIs
+reset story events
+remove newly unlocked locations
+reset completed discoveries
+move the player backward along the main story path
+alter the timeless state of locations
+ 
+⸻
+ 
+52. EXPLORATION AND DEFEAT
+If the player is defeated during dangerous travel:
+the journey ends according to Journey rules
+20% of current gold is lost
+eligible spare items may be lost
+equipped items remain protected
+Epic, Legendary and Story items remain protected
+XP is retained
+story progress is retained
+discovered locations remain discovered
+completed POIs remain completed
+unlocked path segments remain unlocked
+the player’s main-story path position is retained
+Exploration therefore carries risk without destroying long-term progress.
+ 
+⸻
+ 
+53. INVENTORY INTERACTION
+Exploration can produce equipment and other loot.
+The player must manage their inventory in accordance with the established inventory rules.
+Consumables can only be used in safe areas.
+Equipment can be managed according to the established equipment/inventory system.
+ 
+⸻
+ 
+54. WORLD SCALE
+The world should feel large enough to support:
+multiple storylines
+multiple regions
+long-term exploration
+different environments
+meaningful travel
+distinct protagonist paths
+shared world events
+progressive discovery of new locations
+but should not become so large that the player spends most of their time performing meaningless navigation.
+The fixed-path structure allows the world to feel large while keeping the main story readable and purposeful.
+The abstraction of travel allows the player to revisit prior locations without requiring excessive manual movement.
+The timeless-location structure allows the player to progress at their own pace without requiring strict timing for optional exploration.
+The provided maps establish the imaginative scale and geography of the world without requiring an interactive map system.
+ 
+⸻
+ 
+55. STORYLINE CONVERGENCE
+The three starting perspectives progressively become connected.
+Each protagonist begins with a local understanding:
+Starting Settlement
+      ↓
+Starting Region
+      ↓
+Fixed Character Path
+Then encounters:
+Shared Events
+      ↓
+Connected Regions
+      ↓
+New Locations Along the Path
+      ↓
+Wider World
+Eventually:
+Three Perspectives
+        ↓
+Shared World Crisis
+        ↓
+Common Narrative
+The protagonists may follow different geographic paths before reaching shared locations or experiencing the consequences of the same world events.
+The world remains one coherent place throughout.
+The provided maps may illustrate the geographic relationships between these paths, but the player experiences convergence through story, travel choices, locations and discoveries rather than through map interaction.
+ 
+⸻
+ 
+56. EXPLORATION DESIGN PRINCIPLE
+The player should feel:
+“I chose to investigate this place.”
+rather than:
+“The quest marker told me exactly where to click.”
+The game should provide direction without eliminating curiosity.
+The main story should clearly communicate the next forward destination, while POIs and side content should invite the player to look more closely at the path they are travelling.
+Story progression should reveal new places to explore rather than requiring the player to revisit old places at a specific time.
+The player should understand the world through authored travel choices, descriptions, landmarks, NPC information, journal entries and narrative context rather than through an interactive map.
+ 
+⸻
+ 
+57. DATA MODEL
+Conceptually:
+World
+ ├── Regions
+ │    ├── Locations
+ │    ├── Routes
+ │    ├── POIs
+ │    └── Dungeons
+ │
+ ├── Settlements
+ │    ├── Services
+ │    ├── NPCs
+ │    └── Authored Properties
+ │
+ ├── Character Paths
+ │    ├── Forest Protagonist Path
+ │    ├── Coastal Protagonist Path
+ │    └── Mountain Protagonist Path
+ │
+ ├── Story Developments
+ └── Geographic Connections
+Character path state:
+Character Path State
+ ├── Current Path
+ ├── Current Path Position
+ ├── Furthest Path Position Reached
+ ├── Available Forward Locations
+ ├── Available Backward Locations
+ ├── Discovered POIs
+ ├── Completed POIs
+ └── Path-Progression Flags
+Player discovery state:
+Player World State
+ ├── Current Location
+ ├── Unlocked Regions
+ ├── Discovered Locations
+ ├── Discovered POIs
+ ├── Discovered Routes
+ ├── Completed POIs
+ └── Story-Progression Flags
+There is no mutable location-state model for settlement attacks, recovery states or other transformations of existing locations.
+There is no interactive world-map or regional-map state.
+Story progression flags determine which new locations, routes, POIs and destinations are available.
+ 
+⸻
+ 
+58. SERVER AUTHORITY
+The server is authoritative over:
+current location
+current character path
+current path position
+furthest path position reached
+unlocked regions
+discovered locations
+discovered POIs
+route availability
+forward/backward travel availability
+story-progression unlocks
+newly available locations
+travel outcomes
+exploration rewards
+The client displays location, journey and travel information and submits travel, exploration and path-navigation actions.
+The server does not need to maintain mutable world states for existing locations.
+The server does not need to maintain interactive map state, map panning state, map selection state or fog-of-war rendering state.
+ 
+⸻
+ 
+59. CONTENT AUTHORING
+World content should be data-driven.
+A content designer should be able to define:
+regions
+locations
+settlements
+character paths
+path order
+routes
+forward/backward travel rules
+POIs
+dungeons
+danger levels
+enemy tables
+discovery rewards
+story triggers
+services
+story-development unlocks
+new path segments
+path-specific availability
+optional side-content connections
+location descriptions
+route descriptions
+travel presentation text
+landmark descriptions
+NPC directions
+journal discovery links
+without modifying the underlying game engine.
+Content should distinguish between:
+timeless location definitions
+player discovery state
+story progression unlocks
+path position
+completed optional content
+travel presentation data
+The provided world map and regional maps should be treated as reference assets or design documents, not as interactive map data.
+ 
+⸻
+ 
+60. DESIGN INVARIANTS
+The world is one connected setting.
+The world contains eleven significant settlements.
+Three settlements serve as distinct starting locations.
+The three starts represent different perspectives on the same world.
+The three starting areas are geographically meaningful.
+Ancient forests exist.
+High mountain regions exist.
+Dwarven cities exist.
+Desert regions and oases exist.
+Coastal trading regions exist.
+Pirates and smugglers exist.
+Marsh/swamp regions exist.
+Ancient ruins exist.
+Haunted battlefields exist.
+Monster-infested wilderness exists.
+Central regions are comparatively safe.
+Unsafe-area travel can produce combat.
+Consumables can only be used in safe areas.
+Each protagonist has a linear main-story travel path.
+Main-story progression follows the protagonist’s fixed path.
+The player can travel forward along the protagonist’s path.
+The player can travel backward to prior locations along the protagonist’s path.
+The player cannot freely jump to arbitrary unrelated locations.
+Points of Interest provide side content along or near the protagonist’s path.
+Regions progressively unlock through story and authored progression.
+Travel is abstracted into locations, routes, journeys and encounters.
+Points of Interest are major exploration and narrative tools.
+Exploration can reveal journal story bites.
+NPCs can provide information leading to discoveries.
+Locations are timeless once authored and available.
+Existing locations do not transition through mutable world states.
+Story developments are represented through new locations, routes, POIs and destinations.
+Major story developments can expand the player’s available path.
+The mountain monster threat affects mining, dwarves and trade.
+Desert tribal unity creates a distant geopolitical threat.
+Coastal trade is affected by wider world disruption.
+Ancient ruins contain clues about the lost civilisation.
+Haunted battlefields preserve historical narrative.
+World discoveries persist after defeat.
+Story progression persists after defeat.
+Defeat does not reset exploration.
+Defeat does not move the player backward along the main-story path.
+20% of current gold is lost on ordinary defeat.
+Eligible spare items may be lost on ordinary defeat.
+Equipped items remain protected.
+Epic, Legendary and Story items remain protected.
+XP is retained after defeat.
+World exploration is server-authoritative.
+World content is data-driven.
+Exploration should provide meaningful information as well as material rewards.
+The player should be given direction without rigidly scripted navigation.
+The world should feel large without requiring tedious manual movement.
+The three starting storylines progressively connect through shared world events.
+Side content should enrich the main path without disrupting its linear progression.
+Prior locations remain available for return travel.
+POIs may be completed after the player has continued forward along the main path.
+The player may progress at their own pace.
+Optional content should not depend on a location changing state.
+New story developments should appear along the player’s path through new authored locations and destinations.
+Previously visited locations should remain stable and timeless.
+A world map is provided as an imaginative reference for the setting.
+Regional maps are provided as imaginative references for regional geography.
+The world map is not an interactive gameplay function.
+Regional maps are not interactive gameplay functions.
+Players do not navigate by directly manipulating a world map.
+Players do not navigate by directly manipulating regional maps.
+Travel choices are presented through locations, routes, journeys, descriptions and authored destinations.
+Map-based fog of war is not required.
+Interactive map-based destination selection is not required.
+Interactive map-based discovery tracking is not required.
+The provided maps do not need to display player-specific discovery state.
+The provided maps do not need to display current player position.
+The provided maps do not need to display route availability.
+The provided maps do not need to display changing world states.
+The player should understand geography through narrative, landmarks, descriptions, NPC information and travel context.
+ 
+⸻
+ 
+61. OPEN CONTENT WORK
+The following are content-authoring tasks rather than changes to the exploration architecture:
+Final world map reference asset
+Final regional map reference assets
+Exact names of all eleven settlements
+Exact geographic positions
+Region boundaries
+Exact character travel paths
+Path order for each protagonist
+Shared locations between protagonist paths
+Route network
+POI catalogue
+POI placement along each path
+Dungeon locations
+Exact settlement services
+Regional enemy populations
+Regional loot tables
+Story-development timeline
+New-location unlock sequence
+Exact exploration rewards
+Travel presentation
+Location descriptions
+Route descriptions
+Landmark descriptions
+NPC direction content
+Journal discovery links
+Final travel-time values
+Rules for any authored side-content connections between paths
+The following are explicitly not required as interactive systems:
+Interactive world map
+Interactive regional maps
+Map-based destination selection
+Map-based route selection
+Map-based fog of war
+Map-based discovery tracking
+Map-based current-position tracking
+Map-based travel controls
+ 
+⸻
+ 
+62. DEPENDENCIES
+Depends on
+Story & Narrative
+Journey & Dungeon
+Combat
+Enemy & Boss
+Inventory
+Equipment & Loot
+Progression & Economy
+Used by
+Story
+Journal
+Quest
+NPC
+Journey
+Dungeon
+Combat
+Inventory
+UI
+Persistence
+ 
+⸻
+ 
+END OF SPECIFICATION
